@@ -13,7 +13,7 @@ This repository contains an Ansible playbook to automate the process of installi
 Run the playbook to install Nginx:
 
 ```bash
-ansible-playbook install_nginx.yml
+ansible-playbook -i inventory.ini install_nginx.yml
 ```
 
 This will install Nginx on your Linode server.
@@ -21,7 +21,7 @@ This will install Nginx on your Linode server.
 To uninstall Nginx from your Linode server, run the playbook:
 
 ```bash
-ansible-playbook uninstall_nginx.yml
+ansible-playbook -i inventory.ini uninstall_nginx.yml
 ```
 
 # License
