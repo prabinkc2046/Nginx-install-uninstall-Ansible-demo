@@ -1,0 +1,26 @@
+- name: stop nginx and uninstall it and also remove unused dependencies and files
+  hosts: servers
+  become: yes
+
+  tasks:
+
+    - name: stop nginx
+      systemd:
+        name: nginx
+        state: stopped
+      become: yes
+
+    - name: Uninstall nginx
+      apt:
+        name: nginx
+        state: absent
+      become: yes
+
+    
+    - name: removes the unused dependencies
+      apt:
+        autoclean: yes
+        autoremove: yes
+      become: yes
+
+      
